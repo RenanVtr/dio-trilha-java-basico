@@ -4,15 +4,48 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class ProcessoSeletivo {
     public static void main(String[] args) {
+   
         
-        //analisarCandidato(1900);
-        //analisarCandidato(2200);
-        //analisarCandidato(2000);
-        selecaoCandidatos();
+        //Teste caso1
+        /*
+        analisarCandidato(1900);
+        analisarCandidato(2200);
+        analisarCandidato(2000);
+        */
+
+
+        //Teste caso2
+        //selecaoCandidatos();
+
+        //Teste caso3
+        imprimirSelecionados();
     }
 
-    static void selecaoCandidatos(){
+    //CASO 1
+    //Listar decisões conforme a pretensão salarial
+    static void analisarCandidato (double salarioPretendido){
 
+        double salarioBase = 2000.00;
+
+        if (salarioBase > salarioPretendido){
+            System.out.println("Ligar para candidato");
+        } else if( salarioBase == salarioPretendido){
+            System.out.println("Ligar para o candidato com contra proposta");}
+            else {
+                System.out.println("Aguardar os demais candidatos");
+            }
+        }
+
+    //CASO 2
+    //Geração de Pretensão salarial aleatória e analise de aprovação ou rejeição dos candidados
+
+        //Geração de valor randomico entre R$1800 a R$2200 para teste
+        static double valorPretendido(){
+            return ThreadLocalRandom.current().nextDouble(1800,2200);
+        }
+        
+        //Logica de seleção com base na comparação entre salarioBase e valorPretendido
+        static void selecaoCandidatos(){
         //Array de candidatos
         String [] candidatos = {"RENAN", "DANIELA", "MARIZA", "MARCOS", "CAIO", "ELENI", "KYRA", "NICK", "THOR", "MEL"};
 
@@ -36,23 +69,15 @@ public class ProcessoSeletivo {
         }
 
     }
+        //CASO 3
+        //Metodo abreviado foreach para imprimir os candidados selecionados
 
+        static void imprimirSelecionados(){
+            String [] candidatosSelecionados = {"RENAN", "DANIELA", "MARIZA", "MARCOS", "CAIO"};
 
-    static void analisarCandidato (double salarioPretendido){
-
-        double salarioBase = 2000.00;
-
-        if (salarioBase > salarioPretendido){
-            System.out.println("Ligar para candidato");
-        } else if( salarioBase == salarioPretendido){
-            System.out.println("Ligar para o candidato com contra proposta");}
-            else {
-                System.out.println("Aguardar os demais candidatos");
+            for (String candidato : candidatosSelecionados) {
+                System.out.println("O candidato selecionado foi o "+ candidato);
             }
         }
-
-        static double valorPretendido(){
-            return ThreadLocalRandom.current().nextDouble(1800,2200);
-        }
-        
-    }
+ 
+}
