@@ -1,5 +1,6 @@
 package candidatura;
 
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ProcessoSeletivo {
@@ -18,7 +19,14 @@ public class ProcessoSeletivo {
         //selecaoCandidatos();
 
         //Teste caso3
-        imprimirSelecionados();
+        //imprimirSelecionados();
+
+        //Teste caso4
+        String [] candidatos = {"RENAN", "DANIELA", "MARIZA", "MARCOS", "CAIO"};
+        for (String candidato : candidatos) {
+            ligar(candidato);
+        }
+        
     }
 
     //CASO 1
@@ -78,6 +86,29 @@ public class ProcessoSeletivo {
             for (String candidato : candidatosSelecionados) {
                 System.out.println("O candidato selecionado foi o "+ candidato);
             }
+        }
+
+        //CASO 4
+        //Tentativas de ligaçãdo do RH ao candidato
+
+        //Metodo para simular se o candidato atendeu ou não a ligação
+        static boolean atender(){
+            
+            return new Random().nextBoolean();
+
+        }
+        static void ligar(String candidato){
+            int tentativa = 1;
+
+            do   {
+                if (atender()){
+                System.out.println("O candidato "+ candidato + " atendeu a ligação");
+            }else{
+                tentativa++;
+                System.out.println("O candidato " + candidato + " não atendeu a ligação. Realizando a tentativa de ligação no: "+ tentativa);
+            } 
+            }while(atender()==false || tentativa < 3);
+
         }
  
 }
