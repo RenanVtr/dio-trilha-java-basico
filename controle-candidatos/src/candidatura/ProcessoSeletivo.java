@@ -102,14 +102,14 @@ public class ProcessoSeletivo {
 
             while (tentativa<=3){
             if (atender()){
-                System.out.println("O candidato "+ candidato + " atendeu a ligação");
+                System.out.println("O candidato "+ candidato + " atendeu a ligação com "+tentativa+ " tentativa(s)");
                 return;
             }else if(tentativa==3){
-                System.out.println("O candidato "+ candidato + " não atendeu a ligação. Tentativas esgotadas!");
+                System.out.println("Não conseguimos contato com o candidato "+ candidato);
                 return;
             }else{
                 tentativa++;
-                System.out.println("O candidato " + candidato + " não atendeu a ligação. Realizando a tentativa de ligação no: "+ tentativa);
+                System.out.println("O candidato " + candidato + " não atendeu a ligação. Realizando a tentativa de ligação No: "+ tentativa);
                 }
             }
             
