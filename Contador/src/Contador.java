@@ -10,22 +10,29 @@ public class Contador {
         
          Scanner terminal = new Scanner(System.in);
 
-            //Captura de dados
-            System.out.println("Digite o primeiro parametro: ");
-            int parametroUm = terminal.nextInt();
-            System.out.println("Digite o segundo parametro: ");
-            int parametroDois = terminal.nextInt();
-            
-            
-            //Chamando metodo contador
+        //Captura de dados
+        System.out.println("Digite o primeiro parametro: ");
+        int parametroUm = terminal.nextInt();
+        System.out.println("Digite o segundo parametro: ");
+        int parametroDois = terminal.nextInt();
+        
+        
+        //Chamando metodo contador
+        try {
             contar(parametroUm, parametroDois);
-               
-
+        } catch (ParametrosInvalidosException e) {
+            System.out.println("Parametro invalido! O segundo numero deve ser maior que o primeiro.");
+        }
+            
     }
     
 
     //Metodo contador
-    static void contar( int parametroUm, int parametroDois){
+    static void contar( int parametroUm, int parametroDois) throws ParametrosInvalidosException{
+
+        if (parametroUm >= parametroDois){
+            throw new ParametrosInvalidosException();
+        }
             
         //Calculando a diferença entre os valores
         int  contagem = parametroDois - parametroUm;
