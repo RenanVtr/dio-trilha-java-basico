@@ -100,14 +100,19 @@ public class ProcessoSeletivo {
         static void ligar(String candidato){
             int tentativa = 1;
 
-            do   {
-                if (atender()){
+            while (tentativa<=3){
+            if (atender()){
                 System.out.println("O candidato "+ candidato + " atendeu a ligação");
+                return;
+            }else if(tentativa==3){
+                System.out.println("O candidato "+ candidato + " não atendeu a ligação. Tentativas esgotadas!");
+                return;
             }else{
                 tentativa++;
                 System.out.println("O candidato " + candidato + " não atendeu a ligação. Realizando a tentativa de ligação no: "+ tentativa);
-            } 
-            }while(atender()==false || tentativa < 3);
+                }
+            }
+            
 
         }
  
