@@ -1,5 +1,12 @@
 package Navegador;
 
+
+//Objeto implementa a interface Navegador, com finalidade de simular operacoes de um navegador como: 
+// - Exibir pagina
+// - Adicionar Nova Aba
+// - Atualizar pagina
+//
+
 public class Opera implements Navegador{
 
     @Override

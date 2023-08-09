@@ -1,5 +1,12 @@
 package Telefone;
 
+
+//Objeto implementa a interface Telefone, com finalidade de simular operacoes de um aparelho telefonico como: 
+// - Ligar
+// - Atender
+// - Iniciar Correio de Voz
+//
+
 public class Smartphone implements Telefone{
 
     @Override
